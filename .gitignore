@@ -1,0 +1,17 @@
+﻿*.csproj
+BotCoinClicker/.idea
+BotCoinClicker/Logs
+CoinClicker/.idea
+CoinClicker/Logs
+CoinClicker/obj
+BotCoinClicker/obj
+CoinClicker/UserSettings
+BotCoinClicker/UserSettings
+BotCoinClicker/Library
+CoinClicker/CoinClicker.sln
+CoinClicker/Library
+.idea/.idea.CoinClicker
+Library
+Logs
+CoinClicker.sln
+crab-hunting.sln
