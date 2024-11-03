@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Joystick joystickInput;
 
+    public Vector2 inputDirection;
+    
     private void FixedUpdate()
     {
         Move();
@@ -16,16 +19,38 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Vector2 direction = joystickInput.Direction;
-        
-        if (direction != Vector2.zero) // Якщо є напрямок, щоб уникнути обертання при відсутності руху
+        // Отримуємо напрямок від джойстика
+        inputDirection = joystickInput.Direction;
+
+        // Додаємо управління з клавіатури
+        if (Input.GetKey(KeyCode.W))
         {
+            inputDirection += Vector2.up;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            inputDirection += Vector2.down;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            inputDirection += Vector2.left;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            inputDirection += Vector2.right;
+        }
+
+        // Нормалізуємо напрямок, щоб уникнути прискорення по діагоналях
+        if (inputDirection != Vector2.zero) 
+        {
+            inputDirection = inputDirection.normalized;
+
             // Обчислюємо нову позицію
-            Vector2 newPosition = rb.position + direction * moveSpeed * Time.fixedDeltaTime;
+            Vector2 newPosition = rb.position + inputDirection * moveSpeed * Time.fixedDeltaTime;
             rb.MovePosition(newPosition);
 
             // Обчислюємо кут повороту в напрямку руху
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(inputDirection.y, inputDirection.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
         }
     }

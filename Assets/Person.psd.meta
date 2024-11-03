@@ -69,12 +69,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
+    compressionQuality: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -126,10 +126,10 @@ TextureImporter:
       name: Body
       rect:
         serializedVersion: 2
-        x: 297
-        y: 341
-        width: 294
-        height: 254
+        x: 0
+        y: 167
+        width: 217
+        height: 178
       alignment: 9
       pivot: {x: 0.5, y: 0.11046577}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Head
       rect:
         serializedVersion: 2
-        x: 16
-        y: 257
-        width: 251
-        height: 340
+        x: 0
+        y: 345
+        width: 248
+        height: 255
       alignment: 9
       pivot: {x: 0.51963276, y: 0.23290262}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Hand
       rect:
         serializedVersion: 2
-        x: 491
-        y: 99
-        width: 93
-        height: 207
+        x: 354
+        y: 394
+        width: 90
+        height: 206
       alignment: 9
       pivot: {x: 0.54541737, y: 0.8706935}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,12 +189,12 @@ TextureImporter:
       name: Leg
       rect:
         serializedVersion: 2
-        x: 409
-        y: 100
+        x: 354
+        y: 280
         width: 70
-        height: 122
+        height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,6 +202,48 @@ TextureImporter:
       bones: []
       spriteID: 6e4592f94d30b15428bad7fb66de9458
       internalID: 789694102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 220
+        width: 101
+        height: 380
+      alignment: 9
+      pivot: {x: 0.4930299, y: 0.8871876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f407db58324357f4bb19d10faa8e8374
+      internalID: 2038397941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hand2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 394
+        width: 90
+        height: 206
+      alignment: 9
+      pivot: {x: 0.6156423, y: 0.87243146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57a52cc60cf36a48b8cd60574987ac9
+      internalID: -2146918817
       vertices: []
       indices: 
       edges: []
@@ -219,8 +261,10 @@ TextureImporter:
     nameFileIdTable:
       Body: 1432774268
       Hand: 272483627
+      Hand2: -2146918817
       Head: 856598873
       Leg: 789694102
+      Sword: 2038397941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
