@@ -21,7 +21,7 @@ namespace RedDeck.Utilities
 
             // Позиція для нижнього тексту, з відступом 10 пікселів від низу
             float xPosition = (Screen.width - labelWidth) / 2;
-            float yPosition = Screen.height - labelHeight - 10;
+            float yPosition = Screen.height - labelHeight - 60;
 
             // Відображення тексту внизу
             GUI.Label(new Rect(xPosition, yPosition, labelWidth, labelHeight), FPS.ToString("0", CultureInfo.InvariantCulture) + " FPS", _textStyle);

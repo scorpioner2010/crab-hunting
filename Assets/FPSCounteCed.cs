@@ -20,7 +20,7 @@ namespace RedDeck.Utilities
 
             // Позиція для верхнього тексту, розташованого над першим текстом на висоту labelHeight
             float xPosition = (Screen.width - labelWidth) / 2;
-            float yPosition = Screen.height - 2 * labelHeight - 10; // Додаткове зміщення для верхнього тексту
+            float yPosition = Screen.height - 2 * labelHeight - 60; // Додаткове зміщення для верхнього тексту
 
             // Відображення тексту над попереднім
             GUI.Label(new Rect(xPosition, yPosition, labelWidth, labelHeight), _fps.ToString("0", CultureInfo.InvariantCulture) + " FPS", _textStyle);
