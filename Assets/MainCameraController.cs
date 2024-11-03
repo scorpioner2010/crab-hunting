@@ -13,6 +13,6 @@ public class MainCameraController : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 500;
+        Application.targetFrameRate = 60;
     }
 }
