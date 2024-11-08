@@ -1,12 +1,13 @@
 using UnityEngine;
 using Animancer;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class PlayerAnimationController : MonoBehaviour
+public class PlayerAnimation : MonoBehaviour
 {
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private GamePlayer gamePlayer;
     [SerializeField] private AnimancerComponent animancer;
-    [SerializeField] private Button buttonAttack;
+    
 
     [Header("Animations")]
     public AnimationClip idleAnimation;
@@ -26,7 +27,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Start()
     {
-        buttonAttack.onClick.AddListener(PlayAttackAnimation);
+        GameplayManager.In.buttonAttack.onClick.AddListener(PlayAttackAnimation);
 
         // Попередньо створюємо стани анімацій для оптимізації
         idleState = animancer.States.GetOrCreate(idleAnimation);
@@ -44,7 +45,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void UpdateMovementAnimation()
     {
-        Vector2 direction = playerController.inputDirection;
+        Vector2 direction = gamePlayer.inputDirection;
         float speed = direction.magnitude * maxMoveSpeed;
 
         if (direction != Vector2.zero)

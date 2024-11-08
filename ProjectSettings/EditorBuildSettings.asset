@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NewGame/Gameplay.unity
     guid: 4eebc761961d8ad46a8ceef2465e083c
+  - enabled: 1
+    path: Assets/NewGame/GameStart.unity
+    guid: 70b211c09af52494b8e7f51887f07779
   m_configObjects: {}

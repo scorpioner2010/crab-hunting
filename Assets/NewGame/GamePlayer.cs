@@ -1,17 +1,22 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public class GamePlayer : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
 
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Joystick joystickInput;
+    private Joystick _JoystickInput;
 
     public Vector2 inputDirection;
-    
+
+    private void Start()
+    {
+        MainCamera.In.target = transform;
+        _JoystickInput = GameplayManager.In.joystickInput;
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -20,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         // Отримуємо напрямок від джойстика
-        inputDirection = joystickInput.Direction;
+        inputDirection = _JoystickInput.Direction;
 
         // Додаємо управління з клавіатури
         if (Input.GetKey(KeyCode.W))
