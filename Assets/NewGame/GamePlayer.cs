@@ -1,7 +1,9 @@
+using Mirror;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class GamePlayer : MonoBehaviour
+public class GamePlayer : NetworkBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
@@ -24,6 +26,11 @@ public class GamePlayer : MonoBehaviour
 
     private void Move()
     {
+        if (isLocalPlayer == false)
+        {
+            return;
+        }
+        
         // Отримуємо напрямок від джойстика
         inputDirection = _JoystickInput.Direction;
 
