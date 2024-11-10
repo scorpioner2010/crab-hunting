@@ -618,8 +618,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1195354169}
   - component: {fileID: 1195354168}
-  - component: {fileID: 1195354167}
   - component: {fileID: 1195354170}
+  - component: {fileID: 1195354167}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -661,9 +661,9 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   offlineSceneLoadDelay: 0
-  transport: {fileID: 0}
-  networkAddress: 54.83.161.54
-  maxConnections: 100
+  transport: {fileID: 1195354170}
+  networkAddress: localhost
+  maxConnections: 50
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
@@ -723,7 +723,7 @@ MonoBehaviour:
   sslEnabled: 0
   sslProtocols: 3072
   sslCertJson: ./cert.json
-  port: 80
+  port: 27777
   batchSend: 1
   waitBeforeSend: 1
   clientUseWss: 0
